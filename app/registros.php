@@ -12,7 +12,6 @@ class registros extends Model
         'apellido',
         'nombreMas',
         'fecha_cita',
-        'hora',
     ];
     protected $dates = ['fecha_cita'];
 }

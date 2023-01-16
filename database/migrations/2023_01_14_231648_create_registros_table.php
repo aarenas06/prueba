@@ -20,7 +20,6 @@ class CreateRegistrosTable extends Migration
             $table->string('apellido');
             $table->string('nombreMas');
             $table->date('fecha_cita');
-            $table->time('hora');
             $table->rememberToken();
             $table->timestamps();
         });

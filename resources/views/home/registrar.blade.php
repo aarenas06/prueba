@@ -40,12 +40,7 @@
                             <div class="row ">
                                 <div class="col-6">
                                     <label class="col-form-label">fecha Cita</label>
-                                    <input type="date" class="form-control form-control-sm" name="fecha_cita"
-                                        placeholder="......">
-                                </div>
-                                <div class="col-6">
-                                    <label class="col-form-label">Hora</label>
-                                    <input type="time" class="form-control form-control-sm" name="hora"
+                                    <input type="datetime-local" class="form-control form-control-sm" name="fecha_cita"
                                         placeholder="......">
                                 </div>
                             </div>

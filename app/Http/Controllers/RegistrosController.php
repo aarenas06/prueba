@@ -46,6 +46,8 @@ class RegistrosController extends Controller
     {
 
         // $hora = Carbon::createFromFormat('h:i:s A', $request->hora);
+        $horaFormateada = Carbon::parse($request->fecha_cita)->format('H:i');
+
         $request->validate([
 
             'cc' => 'required',
@@ -53,9 +55,8 @@ class RegistrosController extends Controller
             'apellido' => 'required',
             'nombreMas' => 'required',
             'fecha_cita' => 'required',
-            'hora' => 'required',
         ]);
-        $info = registros::select('*')->where('fecha_cita', $request->fecha_cita)->where('hora', $request->hora)->count();
+        $info = registros::select('*')->where('fecha_cita', $request->fecha_cita)->count();
         if ($info == 0) {
             registros::create($request->all());
             session()->flash('message', 'Registro Exitoso');
@@ -98,12 +99,9 @@ class RegistrosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        if ($request->fecha_cita==null) {
-            $actualizar= $request->except(['_token','_method','fecha_cita']);
-        }else {
-            $actualizar= $request->except(['_token','_method']);
-        }
-        registros::where(['id'=>$id])->update($actualizar);
+
+        $actualizar = $request->except(['_token', '_method']);
+        registros::where(['id' => $id])->update($actualizar);
         return redirect()->route('registrar.create');
     }
 
@@ -117,4 +115,9 @@ class RegistrosController extends Controller
     {
         //
     }
+    public function calendar()
+    {
+        return view('home.registrar');
+    }
+
 }

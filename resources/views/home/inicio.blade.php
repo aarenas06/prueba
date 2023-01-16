@@ -7,7 +7,8 @@
     <title>prueba</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{ asset('../../css/style.css') }}">
+        <link rel="stylesheet" href="/css/style.css">
+
 </head>
 
 <body
@@ -30,6 +31,9 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active" href="{{ url('registrar/create') }}">Listar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="{{ url('calendario') }}">Ver calendario</a>
                         </li>
                     </ul>
                 </div>
@@ -59,36 +63,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
         integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="{{ asset('js/data_table.css') }}" crossorigin="anonymous"></script>
+
+    <script src="/js/data_table.js"></script>
+
+    @stack('scripts')
+
 </body>
-<script>
-    (function($) {
-        'use strict';
-        $(function() {
-            $('#order-listing').DataTable({
-                "aLengthMenu": [
-                    [5, 10, 15, -1],
-                    [5, 10, 15, "All"]
-                ],
-                "iDisplayLength": 10,
-                "language": {
-                    search: ""
-                }
-            });
-            $('#order-listing').each(function() {
-                var datatable = $(this);
-                // SEARCH - Add the placeholder for Search and Turn this into in-line form control
-                var search_input = datatable.closest('.dataTables_wrapper').find(
-                    'div[id$=_filter] input');
-                search_input.attr('placeholder', 'Search');
-                search_input.removeClass('form-control-sm');
-                // LENGTH - Inline-Form control
-                var length_sel = datatable.closest('.dataTables_wrapper').find(
-                    'div[id$=_length] select');
-                length_sel.removeClass('form-control-sm');
-            });
-        });
-    })(jQuery);
-</script>
 
 </html>
