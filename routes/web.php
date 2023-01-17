@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,5 +21,7 @@ Route::get('/', function () {
 Route::resource('/registrar', 'RegistrosController');
 
 Route::resource('/calendario', 'Calendario');
+
+Route::post('calendario/edit/{}id', [App\Http\Controllers\Calendario::class, 'edit']);
 
 

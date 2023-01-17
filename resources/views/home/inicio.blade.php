@@ -4,12 +4,13 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>prueba</title>
+    <title>CareVet</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-        <link rel="stylesheet" href="{{ config('app.url') }}:8000/asset/css/style.css">
-        <link rel="stylesheet" href="{{ config('app.url') }}:8000/asset/css/select.dataTables.min.css">
-        <link rel="stylesheet" href="{{ config('app.url') }}:8000/asset/js\datatables.net-bs4\dataTables.bootstrap4.css">
+    <link rel="stylesheet" href="{{ config('app.url') }}:8000/asset/css/style.css">
+    <link rel="stylesheet" href="{{ config('app.url') }}:8000/asset/css/select.dataTables.min.css">
+    <link rel="stylesheet" href="{{ config('app.url') }}:8000/asset/js\datatables.net-bs4\dataTables.bootstrap4.css">
+    <link rel="shortcut icon" type="image/png" href="https://www.zarla.com/images/zarla-carevet-1x1-2400x2400-20210809-ctbb9btmp84tpccp4hdr.png?crop=1:1,smart&width=250&dpr=2">
 </head>
 
 <body
@@ -19,7 +20,7 @@
     <header>
         <nav class="navbar navbar-expand-lg bg-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">Vet-Diego</a>
+                <a class="navbar-brand" href="#">CareVet</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
                     aria-label="Toggle navigation">
@@ -42,13 +43,13 @@
         </nav>
     </header>
 
-    <div> 
+    <div>
         @if (session('message'))
-        <center>
-            <div class="alert alert-success text-center d-flex">
-                {{ session('message') }}
-            </div>
-        </center> 
+            <center>
+                <div class="alert alert-success text-center d-flex">
+                    {{ session('message') }}
+                </div>
+            </center>
         @endif
 
     </div>

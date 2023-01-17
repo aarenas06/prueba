@@ -23,7 +23,9 @@ class Calendario extends Controller
                 'id' => $d->id,
                 'title' => $d->nombreMas,
                 'start' => $d->fecha_cita,
-                'description' => 'holi',
+                'persona'=>$d->nombre ." ".$d->apellido ,
+                'data' => $d->created_at->format('Y-m-d'),
+                'hora' => $d->created_at->format('H:i'),
             ];
         }
 
@@ -68,9 +70,10 @@ class Calendario extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit( registros $id)
     {
-        //
+        $datos = registros::find($id);
+        return response()->json($datos);
     }
 
     /**

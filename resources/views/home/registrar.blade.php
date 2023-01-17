@@ -18,24 +18,24 @@
                             <div class="col-6">
                                 <label class="col-form-label">N° identificacion</label>
                                 <input type="number" class="form-control form-control-sm" name="cc"
-                                    placeholder="......"required>
+                                    placeholder="digite numero de identidad del propietario"required>
                             </div>
                             <div class="col-6">
                                 <label class="col-form-label">Nombre Mascota</label>
                                 <input type="text" class="form-control form-control-sm"
-                                    name="nombreMas"placeholder="......"required>
+                                    name="nombreMas"placeholder="digite el nombre de la mascota"required>
                             </div>
                         </div>
                         <div class="row ">
                             <div class="col-6">
-                                <label class="col-form-label">Nombre dueño</label>
+                                <label class="col-form-label">Nombre Propietario</label>
                                 <input type="text" class="form-control form-control-sm" name="nombre"
-                                    placeholder="......" required>
+                                    placeholder="digite el nombre del propietario" required>
                             </div>
                             <div class="col-6">
-                                <label class="col-form-label">Apellido dueño</label>
+                                <label class="col-form-label">Apellido Propietario</label>
                                 <input type="text" class="form-control form-control-sm" name="apellido"
-                                    placeholder="......" required>
+                                    placeholder="digite el apellido del propietario" required>
                             </div>
                         </div>
                         <div class="row ">
