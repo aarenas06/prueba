@@ -4,15 +4,16 @@
 @section('content')
     <div class="row">
         <div class="col">
-            <div class="card registro">
+            <div class="card registro" style="width: 50%">
                 <div class="card-body">
-                    <form action="{{ route('registrar.store') }}" method="post">
+                    <form action="{{ route('envio.data') }}" method="post">
                         @csrf
                         <center>
                             <img src="https://www.zarla.com/images/zarla-carevet-1x1-2400x2400-20210809-ctbb9btmp84tpccp4hdr.png?crop=1:1,smart&width=250&dpr=2"
-                                alt="" width="20%" height="40%">
+                                alt="" width="20%" height="40%"><br>
+                            <h4 style="font-family: 'Abyssinica SIL', serif;">¡Tu Software de gestión de citas veterinaria favorito!</h4>
                         </center>
-                        <br><br>
+                        <br>
                         <h3>Registro:</h3>
                         <div class="row   align-items-center">
                             <div class="col-6">

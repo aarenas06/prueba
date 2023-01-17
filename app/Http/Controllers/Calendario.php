@@ -13,6 +13,13 @@ class Calendario extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    protected $registros;
+    public function __construct(registros $registros)
+    {
+        $this->registros = $registros;
+    }
+    
     public function index()
     {
         $datos = registros::all();
@@ -23,13 +30,13 @@ class Calendario extends Controller
                 'id' => $d->id,
                 'title' => $d->nombreMas,
                 'start' => $d->fecha_cita,
-                'persona'=>$d->nombre ." ".$d->apellido ,
+                'persona' => $d->nombre . " " . $d->apellido,
                 'data' => $d->created_at->format('Y-m-d'),
                 'hora' => $d->created_at->format('H:i'),
             ];
         }
 
-         return view('home.calendario', compact('events'));
+        return view('home.calendario', compact('events'));
     }
 
     /**
@@ -70,7 +77,7 @@ class Calendario extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit( registros $id)
+    public function edit(registros $id)
     {
         $datos = registros::find($id);
         return response()->json($datos);

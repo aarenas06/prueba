@@ -1,0 +1,4 @@
+[17-Jan-2023 01:13:48 America/Bogota] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/tiindo/pruebas.myconnectmind.com/app/Http/Controllers/Calendario.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/tiindo/pruebas.myconnectmind.com/app/Http/Controllers/Calendario.php on line 9

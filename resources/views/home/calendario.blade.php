@@ -4,7 +4,7 @@
 @section('content')
     <div class="col">
         <center>
-            <div class="card" style="width: 80%; margin-top:3rem;">
+            <div class="card calendario" style="width: 80%; margin-top:2rem;">
                 <div class="card-body text-align-center">
                     <div id='calendar'></div>
                 </div>
@@ -40,6 +40,7 @@
             var datos = @json($events);
             const calendarEl = document.getElementById('calendar');
             const calendar = new FullCalendar.Calendar(calendarEl, {
+                contentHeight: 600,
                 timeZone: 'America/Bogota',
                 initialView: 'dayGridMonth',
                 locale: 'es',

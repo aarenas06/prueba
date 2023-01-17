@@ -13,7 +13,7 @@ class CreateRegistrosTable extends Migration
      */
     public function up()
     {
-        Schema::create('usuarios', function (Blueprint $table) {
+        Schema::create('registros', function (Blueprint $table) {
             $table->id();
             $table->integer('cc');
             $table->string('nombre');

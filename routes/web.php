@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\RegistrosController;
+use App\Http\Controllers\Calendario;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,14 +14,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', function () {return view('home.registrar');}) ->name('inicio');
 
-Route::resource('/registrar', 'RegistrosController');
+Route::get('/list', [RegistrosController::class, 'create'])->name('list');
 
-Route::resource('/calendario', 'Calendario');
+Route::post('/envio', [RegistrosController::class, 'store'])->name('envio.data');
 
-Route::post('calendario/edit/{}id', [App\Http\Controllers\Calendario::class, 'edit']);
+Route::put('/update/{id}', [RegistrosController::class, 'update'])->name('update.data');
+
+Route::get('/calendario', [Calendario::class, 'index']);
+
+
 
 

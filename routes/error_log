@@ -1,0 +1,8 @@
+[17-Jan-2023 01:08:51 America/Bogota] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Support\Facades\Route' not found in /home/tiindo/pruebas.myconnectmind.com/routes/web.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/tiindo/pruebas.myconnectmind.com/routes/web.php on line 17
+[17-Jan-2023 01:13:55 America/Bogota] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Support\Facades\Route' not found in /home/tiindo/pruebas.myconnectmind.com/routes/web.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/tiindo/pruebas.myconnectmind.com/routes/web.php on line 17

@@ -8,6 +8,12 @@ use Carbon\Carbon;
 
 class RegistrosController extends Controller
 {
+
+    protected $registros;
+    public function __construct(registros $registros)
+    {
+        $this->registros = $registros;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -45,9 +51,6 @@ class RegistrosController extends Controller
     public function store(Request $request)
     {
 
-        // $hora = Carbon::createFromFormat('h:i:s A', $request->hora);
-        $horaFormateada = Carbon::parse($request->fecha_cita)->format('H:i');
-
         $request->validate([
 
             'cc' => 'required',
@@ -57,15 +60,14 @@ class RegistrosController extends Controller
             'fecha_cita' => 'required',
         ]);
         $info = registros::select('*')->where('fecha_cita', $request->fecha_cita)->count();
-        if ($info == 0) {
-            registros::create($request->all());
-            session()->flash('message', 'Registro Exitoso');
-            return redirect()->route('registrar.index');
-        } else {
-            session()->flash('message', ' Ya esta ocupado ese dia y hora  ');
-            return redirect()->route('registrar.index');
-        }
-
+         if ($info == 0) {
+             registros::create($request->all());
+             session()->flash('message', 'Registro Exitoso');
+             return redirect()->route('inicio');
+         } else {
+             session()->flash('message', ' Ya esta ocupado ese dia y hora  ');
+             return redirect()->route('inicio');
+         }
     }
 
     /**
@@ -102,7 +104,7 @@ class RegistrosController extends Controller
 
         $actualizar = $request->except(['_token', '_method']);
         registros::where(['id' => $id])->update($actualizar);
-        return redirect()->route('registrar.create');
+        return redirect()->route('list');
     }
 
     /**
