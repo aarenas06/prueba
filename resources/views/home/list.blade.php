@@ -4,9 +4,8 @@
     <div class="row" style="margin-top: 8rem">
       
             <div class="col">
-                <div class="card" style="width: 50%; margin: 0 auto;">
+                <div class="card listar">
                     <div class="card-body">
-
                         <h3 style="text-align: center;"> Tus citas Agendadas</h3>
                         <div class="table-responsive">
                             <table class="table" id="order-listing">
@@ -84,6 +83,5 @@
                     </div>
                 </div>
             </div>
-       
     </div>
 @endsection

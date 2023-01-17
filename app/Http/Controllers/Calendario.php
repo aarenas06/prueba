@@ -20,12 +20,12 @@ class Calendario extends Controller
 
         foreach ($datos as $d) {
             $events[] = [
+                'id' => $d->id,
                 'title' => $d->nombreMas,
                 'start' => $d->fecha_cita,
-                'end' => '2023-01-17 11:00:00',
+                'description' => 'holi',
             ];
         }
-        print_r($events);
 
          return view('home.calendario', compact('events'));
     }

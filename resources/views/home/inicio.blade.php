@@ -7,8 +7,9 @@
     <title>prueba</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-        <link rel="stylesheet" href="/css/style.css">
-
+        <link rel="stylesheet" href="{{ config('app.url') }}:8000/asset/css/style.css">
+        <link rel="stylesheet" href="{{ config('app.url') }}:8000/asset/css/select.dataTables.min.css">
+        <link rel="stylesheet" href="{{ config('app.url') }}:8000/asset/js\datatables.net-bs4\dataTables.bootstrap4.css">
 </head>
 
 <body
@@ -64,10 +65,10 @@
         integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    <script src="/js/data_table.js"></script>
-
+    <script src="{{ config('app.url') }}:8000/asset/js/data_table.js"></script>
+    <script src="{{ config('app.url') }}:8000/asset/js/jquery.dataTables.js"></script>
+    <script src="{{ config('app.url') }}:8000/asset/js/datatables.net-bs4\dataTables.bootstrap4.js"></script>
     @stack('scripts')
-
 </body>
 
 </html>
