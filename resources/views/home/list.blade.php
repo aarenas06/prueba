@@ -24,9 +24,8 @@
                             <tbody>
                                 @foreach ($datos as $d)
                                     @php
-                                        $horas = $d->fecha_cita->format('H:i');
                                         $diasFaltantes = $fechaActual->diffInDays($d->fecha_cita);
-                                        $horasFaltantes = $fechaActual->diffInRealHours($horas);
+                                        $horasFaltantes = $fechaActual->diffInRealHours($d->fecha_cita);
                                     @endphp
                                     <tr>
                                         <td>{{ $d->cc }}</td>
@@ -35,16 +34,24 @@
                                         <td>{{ $d->nombreMas }}</td>
                                         <td>{{ $d->fecha_cita->format('Y-m-d') }}</td>
                                         <td>{{ $d->fecha_cita->format('H:i') }}</td>
-                                        @if ($diasFaltantes > 0)
+
+
+
+                                        @if ($fechaActual > $d->fecha_cita)
+                                            @if ($horasFaltantes > 2)
+                                                <td>No se puede Actualizar </td>
+                                            @else
+                                                <td>
+                                                    <button type="button"
+                                                        class="btn btn-warning btn-sm "data-bs-toggle="modal"
+                                                        data-bs-target="#update{{ $d->id }}">Modificar cita</button>
+                                                </td>
+                                            @endif
+                                        @else
                                             <td>
                                                 <button type="button" class="btn btn-warning btn-sm "data-bs-toggle="modal"
                                                     data-bs-target="#update{{ $d->id }}">Modificar cita</button>
                                             </td>
-                                        @elseif ($diasFaltantes == 0 && $horasFaltantes > 2)
-                                            <button type="button" class="btn btn-warning btn-sm "data-bs-toggle="modal"
-                                                data-bs-target="#update{{ $d->id }}">Modificar cita</button>
-                                        @else
-                                            <td>No se puede modificar, la cita es pronto</td>
                                         @endif
                                     </tr>
                                     <!-- Modal update-->
